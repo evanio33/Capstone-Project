@@ -1,0 +1,7 @@
+﻿  char_imp.cpp
+  fighter_imp.cpp
+  races_imp.cpp
+  Source.cpp
+C:\Users\evana\OneDrive - Colorado Community College System\Fall 2020\CS2\Capstone Project\Character Builder\Character Builder\Source.cpp(10,13): warning C4930: 'diceRoller myDice(void)': prototyped function not called (was a variable definition intended?)
+  Generating Code...
+  Character Builder.vcxproj -> C:\Users\evana\OneDrive - Colorado Community College System\Fall 2020\CS2\Capstone Project\Character Builder\Debug\Character Builder.exe
