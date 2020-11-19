@@ -142,14 +142,15 @@
     <ClInclude Include="character.h" />
     <ClInclude Include="Dice_Roller.h" />
     <ClInclude Include="fighter.h" />
+    <ClInclude Include="player_class.h" />
     <ClInclude Include="Races.h" />
     <ClInclude Include="stats.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="char_imp.cpp" />
-    <ClCompile Include="fighter_imp.cpp" />
+    <ClCompile Include="player_class.cpp" />
     <ClCompile Include="races_imp.cpp" />
-    <ClCompile Include="Source.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="dice_roller_imp.cpp" />
     <ClCompile Include="stats_imp.cpp" />
   </ItemGroup>

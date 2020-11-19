@@ -30,11 +30,11 @@
     <ClInclude Include="Races.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="player_class.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="dice_roller_imp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -44,10 +44,13 @@
     <ClCompile Include="char_imp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="fighter_imp.cpp">
+    <ClCompile Include="races_imp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="races_imp.cpp">
+    <ClCompile Include="player_class.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

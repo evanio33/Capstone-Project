@@ -2,7 +2,10 @@
 
 
 
-
+//A method that determine's the character's level. 
+	//  The user inputs an integer between 1 and 20.
+	//  If the user attempts to input a number outside the range, 
+	//  an error message is displayed and the method is called again. 
 void character::setLevelInit() {
 	std::cout << "What level is your character? ";
 	std::cin >> level;
@@ -16,12 +19,14 @@ void character::setLevelInit() {
 	}
 }
 
-void character::setName(std::string n) {
-	//std::cout << "Enter character's name: ";
-	//std::getline(std::cin, name);
-	name = n;
+void character::set_name() {
+	std::cout << "Enter character's name: ";
+	std::getline(std::cin, name);
+	//name = n;
 }
 
+//Method to set proficiency bonus. This bonus is determined by level
+	//  Proficiency bonus is added to rolls in which the character does something that they are proficient in. 
 void character::setProficiencyBonus(int level) {
 	switch (level) {
 	case 1: case 2: case 3: case 4:
@@ -45,106 +50,217 @@ void character::setProficiencyBonus(int level) {
 	}
 }
 
-void character::setClass() {
-	std::cout << "Enter your character class. choose from " 
-		<< "Fighter, Rogue, or Wizard" << std::endl;
-	std::cin >> charClass;
-	transform(charClass.begin(), charClass.end(), charClass.begin(), ::tolower);
-	std::cout << charClass << std::endl;
-	if (charClass == "fighter")
-	{
-		std::cout << "what up my fighter bro" << std::endl;
-	}
-	else if (charClass == "rogue")
-	{
-		std::cout << "what up you sneaky rogue" << std::endl;
-	} 
-	else if (charClass == "wizard")
-	{
-		std::cout << "come on do some spells and shit mr Wizard" << std::endl;
-	}
-	else
-	{
-		std::cout << "invalid class selection, try again." << std::endl;
-		setClass();
-	}
-}
 
-void character::setStats() {
+
+void character::set_stats() {
 	ch_stats = new stats;
 }
 
 void character::set_race()
 {
-	std::string c_race;
+	
 	std::cout << "Choose your player race. Choose from "
-		<< "Dwarf, Human, Halfling, and Elf" << std::endl;
+		<< "Dwarf, Human, Halfling, and Elf" << std::endl
+		<< "----------" << std::endl
+		<< "1:  Dwarf"
+		<< "\n2:  Human "
+		<< "\n3:  Halfling"
+		<< "\n4:  Elf\n";
+
 	std::cin.clear();
-	std::cin.ignore(100000, '\n');
+	std::cin.ignore(10000, '\n');
 	std::cin >> c_race;
-	transform(c_race.begin(), c_race.end(), c_race.begin(), ::tolower);
-	if (c_race == "dwarf")
+
+	switch (c_race) 
 	{
-		std::cout << "you chose dwarf" << std::endl;
-		race = new dwarf(*ch_stats);
-	}
-	else if (c_race == "human")
-	{
-		std::cout << "you chose human" << std::endl;
-		race = new human(*ch_stats);
-	}
-	else if (c_race == "halfling")
-	{
-		std::cout << "you chose halfling" << std::endl;
-		race = new halfling(*ch_stats);
-	}
-	else if (c_race == "elf")
-	{
-		std::cout << "you chose elf" << std::endl;
-		race = new elf(*ch_stats);
-	}
-	else
-	{
-		
-		std::cout << "invalid selection, try again." << std::endl;
+	case 1:
+		std::cout << "You chose a dwarf" << std::endl;
+		ch_race = new dwarf(*ch_stats);
+		break;
+	case 2:
+		std::cout << "You chose a Human" << std::endl;
+		ch_race = new human(*ch_stats);
+		break;
+	case 3:
+		std::cout << "You chose Halfling" << std::endl;
+		ch_race = new halfling(*ch_stats);
+		break;
+	case 4:
+		std::cout << "you chose an Elf" << std::endl;
+		ch_race = new elf(*ch_stats);
+		break;
+	default:
+		std::cout << "invalid entry. Try again." << std::endl;
 		set_race();
+		break;
 	}
 }
 
-int character::getLevel(){
+void character::set_class()
+{
+	int i_class;
+	std::cout << "Enter your character class. choose from \n"
+		<< "1:  Fighter\n2:  Rogue\n3:  Wizard" << std::endl;
+	std::cin.clear();
+	std::cin.ignore(100000, '\n');
+	std::cin >> i_class;
+
+	switch (i_class)
+	{
+	case 1:
+		std::cout << "you chose Fighter\n";
+		c_class = "fighter";
+		ch_class = new fighter;
+		break;
+	case 2:
+		std::cout << "You chose Rogue\n";
+		c_class = "rogue";
+		ch_class = new rogue;
+		break;
+	case 3:
+		std::cout << "You chose Wizard\n";
+		c_class = "wizard";
+		ch_class = new wizard;
+		break;
+	default:
+		std::cout << "incorrect input. Try again.\n";
+		set_class();
+		break;
+	}
+}
+
+//*****************************************************************************************************************************
+//GETTER METHODS
+
+int const character::getLevel(){
 	return level;
 }
 
-int character::getProficiency() {
+int const character::getProficiency() {
 	return profBonus;
 }
 
-std::string character::getName(){ 
+std::string const character::getName(){ 
 	return name;
 }
 
-std::string character::getClass() {
-	return charClass;
+std::string const character::getClass() {
+	return c_class;
 }
 
-int character::getAbility(int score) {
+int const character::getAbility(int score) {
 	return ch_stats->get_abilityScore(score);
 }
 
-int character::getSkill(int ability, int skill)
+int const character::getSkill(int ability, int skill)
 {
 	return ch_stats->get_skill(ability, skill);
 }
 
+//*****************************************************************************************************************************
+//Print methods
+
+//prints all ability scores
+void const character::print_abilityScores() 
+{
+	std::cout << "\n\nABILITY SCORES" << std::endl;
+	for (int i = 0; i < ch_stats->abilityScores.size(); i++)
+		std::cout << ch_stats->c_abilities[i] << ": " << ch_stats->get_abilityScore(i) << std::endl;
+}
+
+//prints all ability modifiers
+void const character::print_abilityMods() 
+{
+	std::cout << "\n\nABILITY MODIFIERS" << std::endl;
+	for (int i = 0; i < ch_stats->abilityScores.size(); i++)
+		std::cout << ch_stats->c_abilities[i] << " Modifier: " << ch_stats->get_Mod(i) << std::endl;
+}
+
+//Method that prints all skills
+void const character::print_skills() 
+{
+	std::cout << "\n\nSKILLS" << std::endl;
+	int skillsCounter = 0;
+	for (int i = 0; i < ch_stats->abilityMod.size(); i++)
+	{
+		std::cout << ch_stats->c_abilities[i] << std::endl;
+		if (i != 2)
+		{
+			for (int j = 0; j < ch_stats->skills[i].size(); j++)
+			{
+				std::cout << ch_stats->s_skills[skillsCounter] << ": " << ch_stats->skills[i][j] << std::endl;
+				skillsCounter++;
+			}
+			std::cout << std::endl;
+		}
+		else {
+			std::cout << "no skills\n\n";
+			skillsCounter++;
+		}
+	}
+}
+
+//Method that prints all saving throws
+void const character::print_saves()
+{
+	std::cout << "\n\nSAVING THROWS" << std::endl;
+	for (int i = 0; i < ch_stats->abilityScores.size(); i++)
+	{
+		std::cout << ch_stats->c_abilities[i] << ": " << ch_stats->savingThrows[i] << std::endl;
+	}
+}
+
+//Method that prints character's name
+void const character::print_name() 
+{
+	std::cout << "\nCharacter name: " << name << std::endl;
+}
+
+void const character::print_level() 
+{
+	std::cout << "\nCharacter's Level: " << level << std::endl;
+}
+
+void const character::print_proficiencyBonus() 
+{
+	std::cout << "\nProficiency Bonus: " << profBonus << std::endl;
+}
+
+void const character::print_race() 
+{
+	std::cout << "\ncharacter race: " << c_race << std::endl;
+}
 
 
-character::character() {
-	//setName();
+void const character::print_class() 
+{
+	std::cout << "\nCharacter class: " << c_class << std::endl;
+}
+
+void const character::print_all() 
+{
+	print_name();
+	print_level();
+	print_race();
+	print_class();
+	print_abilityScores();
+	print_abilityMods();
+	print_proficiencyBonus();
+	print_skills();
+}
+
+
+
+//*****************************************************************************************************************************
+//constructor and destructor
+character::character() 
+{
+	set_name();
 	setLevelInit();
 	setProficiencyBonus(level);
+	set_stats();
 	set_race();
-	setClass();
-	setStats();
+	set_class();
 }
 
 character::~character() {}

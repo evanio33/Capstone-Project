@@ -1,7 +1,27 @@
 ﻿  char_imp.cpp
-  fighter_imp.cpp
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\char_imp.cpp(167,20): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\char_imp.cpp(175,20): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\char_imp.cpp(184,20): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\char_imp.cpp(189,22): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\char_imp.cpp(207,20): warning C4018: '<': signed/unsigned mismatch
+  player_class.cpp
   races_imp.cpp
-  Source.cpp
-C:\Users\evana\OneDrive - Colorado Community College System\Fall 2020\CS2\Capstone Project\Character Builder\Character Builder\Source.cpp(10,13): warning C4930: 'diceRoller myDice(void)': prototyped function not called (was a variable definition intended?)
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(110,20): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(114,9): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(121,20): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(184,21): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(192,23): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(239,21): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(245,23): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(289,21): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(299,23): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(309,23): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(351,21): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(359,23): warning C4018: '<': signed/unsigned mismatch
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\races_imp.cpp(369,23): warning C4018: '<': signed/unsigned mismatch
+  main.cpp
+  dice_roller_imp.cpp
+  stats_imp.cpp
+H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Character Builder\stats_imp.cpp(78,20): warning C4018: '<': signed/unsigned mismatch
   Generating Code...
-  Character Builder.vcxproj -> C:\Users\evana\OneDrive - Colorado Community College System\Fall 2020\CS2\Capstone Project\Character Builder\Debug\Character Builder.exe
+  Character Builder.vcxproj -> H:\school\2020-2021\Fall 2020\CS2\capstone project\Character Builder\Debug\Character Builder.exe
